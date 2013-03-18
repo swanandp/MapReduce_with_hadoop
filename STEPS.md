@@ -1,27 +1,28 @@
 #### Start Hadoop
-start-all.sh
+    start-all.sh
 
 #### Formatting HDFS for the task
-hadoop namenode -format
+    hadoop namenode -format
 
 #### Check if everything went well
-// should list /tmp
-hadoop fs -ls / 
+    # should list /tmp
+    hadoop fs -ls / 
 
 #### Sanity check:
-NameNode: http://localhost:50070/
-JobTracker: http://localhost:50030/
+    http://localhost:50070/ # NameNode  
+    http://localhost:50030/ # JobTracker  
 
 #### Put Data in HDFS
-// create directories
-hadoop fs -mkdir pg
-hadoop fs -mkdir pg_output
-hadoop fs -put input/pg11.txt pg/
-hadoop fs -put input/pg174.txt pg/
-hadoop fs -put input/pg844.txt pg/
-hadoop fs -put input/pg1661.txt pg/
-// list all
-hadoop fs -ls pg
+    # create directories
+    hadoop fs -mkdir pg
+    hadoop fs -mkdir pg_output
+    # copy files
+    hadoop fs -put input/pg11.txt pg/
+    hadoop fs -put input/pg174.txt pg/
+    hadoop fs -put input/pg844.txt pg/
+    hadoop fs -put input/pg1661.txt pg/
+    # list all
+    hadoop fs -ls pg
 
 #### Run tasks
-sh stream.sh
+    sh stream.sh
