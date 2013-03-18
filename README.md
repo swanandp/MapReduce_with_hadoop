@@ -25,4 +25,5 @@
     hadoop fs -ls pg
 
 #### Run tasks
+    cd code/alphabeta/
     sh stream.sh
